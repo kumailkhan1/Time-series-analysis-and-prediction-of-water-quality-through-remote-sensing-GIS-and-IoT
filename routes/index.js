@@ -13,16 +13,6 @@ exports.dashboardRouter = function (req, res) {
 
 
 exports.predict = async function (req, res, next) {
-    let data = req.body;
-    try {
-        let tensor = tf.tensor3d(data,[1,1,24])
-        let model = await tf.loadLayersModel('http://localhost:3000/assets/ml-models/converted-lstm/py_model.json');
-        let prediction = model.predict(tensor);
-        const value = prediction.dataSync()[0]
-        res.send(JSON.stringify(value))
-    }
-    catch (err) {
-        next(err);
-    }
+
 
 }

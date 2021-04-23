@@ -10,7 +10,7 @@
     <base href="/">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
     <script src="https://www.jsdelivr.com/package/npm/@tensorflow/tfjs-node"></script>
-    <script src="/dashboard/index.js"></script>
+    <script src="/dashboard/prediction.js"></script>
 
     <!--[if lt IE 10]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -371,8 +371,8 @@
                                 <div class="col-lg-8">
                                     <div class="page-header-title">
                                         <i class="feather icon-home bg-c-blue"></i>
-                                        <div class="d-inline" id="dd">
-                                            <h5>Dashboard</h5>
+                                        <div class="d-inline" id="headline">
+                                            <h5>Make Predictions</h5>
                                             <span></span>
                                         </div>
                                     </div>
@@ -381,9 +381,11 @@
                                     <div class="page-header-breadcrumb">
                                         <ul class=" breadcrumb breadcrumb-title">
                                             <li class="breadcrumb-item">
-                                                <a href="../index.html"><i class="feather icon-home"></i></a>
+                                                <a href="dashboard/prediction.html"><i
+                                                        class="feather icon-home"></i></a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Dashboard</a> </li>
+                                            <li class="breadcrumb-item"><a
+                                                    href="dashboard/prediction.html">Predictions</a> </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -400,216 +402,64 @@
                                             <div class="col-md-12 col-xl-12">
                                                 <div class="card sale-card">
                                                     <div class="card-header">
-                                                        <h5>Water Quality Index</h5>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div id="sales-analytics" class="chart-shadow"
-                                                            style="height:380px"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12 col-xl-4">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Dissolved Oxygen</h6>
-                                                                <h3 class="f-w-700 text-c-blue">9</h3>
-                                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-eye bg-c-blue"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-xl-4">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">pH</h6>
-                                                                <h3 class="f-w-700 text-c-green">7</h3>
-                                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-bullseye bg-c-green"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-xl-4">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Turbidity</h6>
-                                                                <h3 class="f-w-700 text-c-yellow">200</h3>
-                                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-hand-paper bg-c-yellow"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-xl-4">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Chlorophyll-a Concentration</h6>
-                                                                <h3 class="f-w-700 text-c-yellow">200</h3>
-                                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-hand-paper bg-c-yellow"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-xl-4">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Dissolved Solids </h6>
-                                                                <h3 class="f-w-700 text-c-yellow">200</h3>
-                                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-hand-paper bg-c-yellow"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-xl-4">
-                                                <div class="card comp-card">
-                                                    <div class="card-body">
-                                                        <div class="row align-items-center">
-                                                            <div class="col">
-                                                                <h6 class="m-b-25">Temperature</h6>
-                                                                <h3 class="f-w-700 text-c-yellow">200</h3>
-                                                                <p class="m-b-0">May 23 - June 01 (2017)</p>
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <i class="fas fa-hand-paper bg-c-yellow"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                        <h4 class="sub-title">Predict Water Quality Index</h4>
 
-                                        <!-- <div class="col-xl-12">
-                                                <div class="card proj-progress-card">
-                                                    <div class="card-block">
-                                                        <div class="row">
-                                                            <div class="col-xl-3 col-md-6">
-                                                                <h6>Published Project</h6>
-                                                                <h5 class="m-b-30 f-w-700">532<span
-                                                                        class="text-c-green m-l-10">+1.69%</span></h5>
-                                                                <div class="progress">
-                                                                    <div class="progress-bar bg-c-red"
-                                                                        style="width:25%"></div>
+                                                        <form>
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label"
+                                                                    for="temperature">Temperature</label>
+                                                                <div class="col-sm-4">
+                                                                    <input type="number" class="form-control"
+                                                                        name="temperature" id="temperature">
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label"
+                                                                    for="turbidity">Turbidity</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control" type="number"
+                                                                        name="turbidity" id="turbidity">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-xl-3 col-md-6">
-                                                                <h6>Completed Task</h6>
-                                                                <h5 class="m-b-30 f-w-700">4,569<span
-                                                                        class="text-c-red m-l-10">-0.5%</span></h5>
-                                                                <div class="progress">
-                                                                    <div class="progress-bar bg-c-blue"
-                                                                        style="width:65%"></div>
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label"
+                                                                    for="ph">pH</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control" type="number" name="ph"
+                                                                        id="ph">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-xl-3 col-md-6">
-                                                                <h6>Successfull Task</h6>
-                                                                <h5 class="m-b-30 f-w-700">89%<span
-                                                                        class="text-c-green m-l-10">+0.99%</span></h5>
-                                                                <div class="progress">
-                                                                    <div class="progress-bar bg-c-green"
-                                                                        style="width:85%"></div>
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label" for="dsolids">
+                                                                    Dissolved Solids</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control" type="number"
+                                                                        name="dsolids" id="dsolids">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-xl-3 col-md-6">
-                                                                <h6>Ongoing Project</h6>
-                                                                <h5 class="m-b-30 f-w-700">365<span
-                                                                        class="text-c-green m-l-10">+0.35%</span></h5>
-                                                                <div class="progress">
-                                                                    <div class="progress-bar bg-c-yellow"
-                                                                        style="width:45%"></div>
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label"
+                                                                    for="doxygen">Dissolved Oxygen</label>
+                                                                <div class="col-sm-4">
+                                                                    <input class="form-control" type="number"
+                                                                        name="doxygen" id="doxygen">
                                                                 </div>
+
                                                             </div>
-                                                        </div>
+
+                                                        </form>
+
+                                                        <button class="btn btn-success waves-effect waves-light"
+                                                            id="predictBtn">Submit</button>
+                                                        <br/>
+                                                        <br/>
+                                                        <br/>
+                                                        <h4 class="subtitle">The Water Quality is <span
+                                                                id="model-output"></span></h4>
+
                                                     </div>
-                                                </div>
-                                            </div> -->
 
-
-
-                                        <div class="col-md-12">
-                                            <div class="card table-card">
-                                                <div class="card-header">
-                                                    <h5>Water Quality Data</h5>
-                                                    <div class="card-header-right">
-                                                        <ul class="list-unstyled card-option">
-                                                            <li class="first-opt"><i
-                                                                    class="feather icon-chevron-left open-card-option"></i>
-                                                            </li>
-                                                            <li><i class="feather icon-maximize full-card"></i></li>
-                                                            <li><i class="feather icon-minus minimize-card"></i>
-                                                            </li>
-                                                            <li><i class="feather icon-refresh-cw reload-card"></i>
-                                                            </li>
-                                                            <li><i class="feather icon-trash close-card"></i></li>
-                                                            <li><i
-                                                                    class="feather icon-chevron-left open-card-option"></i>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="card-block p-b-0">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover m-b-0">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Date
-                                                                    </th>
-                                                                    <th>Temperature</th>
-                                                                    <th>TURBIDITY_NTU
-                                                                    </th>
-                                                                    <th>PH
-                                                                    </th>
-                                                                    <th>DISSOLVED_SOLIDS
-                                                                    </th>
-                                                                    <th>DISSOLVED_OXYGEN_mgL
-                                                                    </th>
-                                                                    <th>WQI Category</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-
-                                                                <tr>
-                                                                    <td>2016-01-31</td>
-                                                                    <td>11</td>
-                                                                    <td>22</td>
-                                                                    <td>7.64</td>
-                                                                    <td>304</td>
-                                                                    <td>3.6</td>
-                                                                    <td>POOR</td>
-                                                                </tr>
-
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
