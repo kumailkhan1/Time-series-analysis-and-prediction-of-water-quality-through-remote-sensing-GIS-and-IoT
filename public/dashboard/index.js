@@ -8,7 +8,7 @@ async function loadModel() {
     )
         .catch((err) => {
             console.log(err)
-        });;
+        });
     document.getElementById("dd").innerText = hello.name;
 
 }
