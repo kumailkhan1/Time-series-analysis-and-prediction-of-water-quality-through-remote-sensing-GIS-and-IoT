@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 var bodyParser = require('body-parser')
 const app = express();
+const serverless = require('serverless-http');
 const index = require('./routes/index.js');
 
 app.use(bodyParser.json())
@@ -17,6 +18,4 @@ app.get('/dashboard/index.html',index.dashboardRouter)
 
 app.post('/dashboard/predict',index.predict)
 
-app.get('')
-module.exports = app
-app.listen(3000);
+module.exports.handler = serverless(app);
