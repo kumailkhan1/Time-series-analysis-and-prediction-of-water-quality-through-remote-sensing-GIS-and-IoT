@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:07:52 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
+<head>
+    <title>Water Parameters Data from Sentinel 2 Satellite</title>
+    <base href="/">
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+
+    <!--[if lt IE 10]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Admindek Bootstrap admin template made using Bootstrap 4 and it has huge amount of ready made feature, UI components, pages which completely fulfills any dashboard needs." />
+    <meta name="keywords"
+        content="flat ui, admin Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="colorlib" />
+    <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="dashboard/css/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/feather.css">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/themify-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/icofont.css">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/footable.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="dashboard/css/jquery.datatables.min-2.css">
+    <link rel="stylesheet" type="text/css" href="dashboard/css/footable.standalone.min.css">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/style.css">
+    <link rel="stylesheet" type="text/css" href="dashboard/css/pages.css">
+</head>
+
+<body>
+
+    <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div>
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a href="index.html">
+                            <img class="img-fluid" src="dashboard/png/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu icon-toggle-right"></i>
+                        </a>
+                        <a class="mobile-options waves-effect waves-light">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close">
+                                            <i class="feather icon-x input-group-text"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                        <span class="input-group-append search-btn">
+                                            <i class="feather icon-search input-group-text"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#!"
+                                    onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()"
+                                    class="waves-effect waves-light" data-cf-modified-d2d1d6e2f87cbebdf4013b26-="">
+                                    <i class="full-screen feather icon-maximize"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+
+                    <nav id="common-nav" class="pcoded-navbar">
+
+                    </nav>
+                    <script>
+                        getHeader();
+                        async function getHeader() {
+                            let header = await fetch('dashboard/header.html');
+                            header = await header.text();
+                            document.getElementById('common-nav').innerHTML = header;
+                        }
+
+                    </script>
+
+                    <div class="pcoded-content">
+
+                        <div class="page-header card">
+                            <div class="row align-items-end">
+                                <div class="col-lg-8">
+                                    <div class="page-header-title">
+                                        <i class="feather icon-home bg-c-blue"></i>
+                                        <div class="d-inline" id="headline">
+                                            <h5>Non-interpolated Water Quality Parameters Dataset from ESA's Sentinel 2 Satellite</h5>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="page-header-breadcrumb">
+                                        <ul class=" breadcrumb breadcrumb-title">
+                                            <li class="breadcrumb-item">
+                                                <a href="dashboard/sentinel2_dataset.html"><i
+                                                        class="feather icon-home"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="dashboard/sentinel2_dataset.html">Sentinel 2 Dataset</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h4 class="sub-title">Non-interpolated Data from ESA's Sentinel 2 Satellite
+                                                        </h4>
+                                                        <div class="card-block table-border-style">
+                                                            <div class="table-responsive">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!--[if lt IE 10]>
+    <div class="ie-warning">
+        <h1>Warning!!</h1>
+        <p>You are using an outdated version of Internet Explorer, please upgrade
+            <br/>to any of the following web browsers to access this website.
+        </p>
+        <div class="iew-container">
+            <ul class="iew-download">
+                <li>
+                    <a href="http://www.google.com/chrome/">
+                        <img src="../files/assets/images/browser/chrome.png" alt="Chrome">
+                        <div>Chrome</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.mozilla.org/en-US/firefox/new/">
+                        <img src="../files/assets/images/browser/firefox.png" alt="Firefox">
+                        <div>Firefox</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.opera.com">
+                        <img src="../files/assets/images/browser/opera.png" alt="Opera">
+                        <div>Opera</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.apple.com/safari/">
+                        <img src="../files/assets/images/browser/safari.png" alt="Safari">
+                        <div>Safari</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                        <img src="../files/assets/images/browser/ie.png" alt="">
+                        <div>IE (9 & above)</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <p>Sorry for the inconvenience!</p>
+    </div>
+<![endif]-->
+    <script>
+        var tabulate = function (data, columns) {
+            console.log(data,columns);
+            var table = d3.select('.table-responsive').append('table')
+            table.attr('class','table table-styling')
+            table.attr('id','demo-foo-filtering')
+            var thead = table.append('thead')
+            thead.attr('class','table-primary')
+            var tbody = table.append('tbody')
+
+            thead.append('tr')
+                .selectAll('th')
+                .data(columns)
+                .enter()
+                .append('th')
+                .attr('data-breakpoints',"xs")
+                .text(function (d) { return d });
+
+            var rows = tbody.selectAll('tr')
+                .data(data)
+                .enter()
+                .append('tr');
+
+            var cells = rows.selectAll('td')
+                .data(function (row) {
+                    return columns.map(function (column) {
+                        return { column: column, value: row[column] }
+                    })
+                })
+                .enter()
+                .append('td')
+                .text(function (d) { return d.value });
+
+            return table;;
+        }
+
+        d3.csv('dashboard/Sentinel2_Non-Interpolated.csv', function (data) {
+            var columns = ['Date','Dissolved Oxygen','Total Suspended Solids','Turbidity','Chlorophyll'];
+            tabulate(data, columns);
+        });
+    </script>
+
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/jquery.min.js"></script>
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/jquery-ui.min.js"></script>
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/popper.min.js"></script>
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/bootstrap.min.js"></script>
+
+<script src="dashboard/js/waves.min.js" type="86124f15641fad31fbd84eac-text/javascript"></script>
+
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/jquery.slimscroll.js"></script>
+
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/modernizr.js"></script>
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/css-scrollbars.js"></script>
+
+<script src="dashboard/js/footable.min.js" type="86124f15641fad31fbd84eac-text/javascript"></script>
+<script src="dashboard/js/foo-table-custom.js" type="86124f15641fad31fbd84eac-text/javascript"></script>
+
+<script src="dashboard/js/pcoded.min.js" type="86124f15641fad31fbd84eac-text/javascript"></script>
+<script src="dashboard/js/vertical-layout.min.js" type="86124f15641fad31fbd84eac-text/javascript"></script>
+<script src="dashboard/js/jquery.mcustomscrollbar.concat.min.js" type="86124f15641fad31fbd84eac-text/javascript"></script>
+<script type="86124f15641fad31fbd84eac-text/javascript" src="dashboard/js/script.js"></script>
+
+<script src="dashboard/js/rocket-loader.min.js" data-cf-settings="86124f15641fad31fbd84eac-|49" defer=""></script>
+</body>
+
+<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:08:25 GMT -->
+
+</html>
