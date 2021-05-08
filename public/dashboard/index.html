@@ -171,15 +171,23 @@
                                             <div class="col-md-12 col-xl-12">
                                                 <div class="card sale-card">
                                                     <div class="card-header">
-                                                        <h5>Water Quality Index</h5>
+                                                        <h5>Future Predictions using LSTM</h5>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-6 col-xl-4">
                                                             <canvas id="temperature-chart"></canvas>
-
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-4">
+                                                            <canvas id="turbidity-chart"></canvas>
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-4">
+                                                            <canvas id="ph-chart"></canvas>
                                                         </div>
                                                         <div class="col-md-6 col-xl-4">
                                                             <canvas id="dsolids-chart"></canvas>
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-4">
+                                                            <canvas id="doxygen-chart"></canvas>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -191,36 +199,82 @@
                                         <script>
 
                                             drawChart('temperature-chart');
+                                            drawChart('turbidity-chart');
+                                            drawChart('ph-chart');
                                             drawChart('dsolids-chart')
+                                            drawChart('doxygen-chart');
+
                                             async function drawChart(id) {
-                                                let data = await fetch('Predictions.csv');
-                                                let data 
+                                                let rawdata = await fetch('dashboard/Predictions.csv');
+                                                rawdata = await rawdata.text();
+                                                let data = await getData(rawdata, id)
                                                 let label;
-                                                switch (id) {
-                                                    case 'temperature-chart':
-                                                        label = 'Temperature';
-                                                        
-                                                        break;
-                                                    case 'dsolids-chart':
-                                                        label = 'Dissolved Solids';
-                                                        break;
-                                                }
+
                                                 var ctx = document.getElementById(id).getContext('2d');
                                                 var myChart = new Chart(ctx, {
                                                     type: 'line',
                                                     data: {
-                                                        labels: ['a','b','c','d','e','f'],
+                                                        labels: data.xlabels,
                                                         datasets: [{
-                                                            label: label,
-                                                            data: [12, 19, 3, 5, 2, 3],
-
-                                                            borderColor: 'rgb(75, 192, 192)',
+                                                            label: data.label,
+                                                            data: data.ydata,
+                                                            fill: false,
+                                                            borderColor: data.bgcolor,
 
                                                             borderWidth: 1
                                                         }]
                                                     },
 
                                                 });
+                                            }
+
+                                            async function getData(data, flag) {
+                                                let xlabels = [];
+                                                let ydata = [];
+                                                let label;
+                                                let bgcolor;
+                                                // make row of array after every new line 
+                                                // and then skip the first line containing (date,temperature etc) headers
+                                                // return the data as array
+                                                const table = data.split('\n').slice(1);
+                                                table.forEach(row => {
+                                                    const columns = row.split(',');
+                                                    // columns[0] contains date
+                                                    const year = columns[0];
+                                                    xlabels.push(year);
+
+                                                    // returning other data based on flag
+                                                    switch (flag) {
+                                                        case 'temperature-chart':
+                                                            label = 'Temperature';
+                                                            bgcolor = 'rgba(255, 99, 132, 1)';
+                                                            ydata.push(columns[1])
+                                                            break;
+                                                        case 'turbidity-chart':
+                                                            label = 'Turbidity';
+                                                            bgcolor = 'rgba(255, 159, 64, 1)';
+                                                            ydata.push(columns[2])
+                                                            break;
+                                                        case 'ph-chart':
+                                                            label = 'pH';
+                                                            bgcolor = 'rgba(255, 205, 86, 1)';
+                                                            ydata.push(columns[3])
+                                                            break;
+                                                        case 'dsolids-chart':
+                                                            label = 'Dissolved Solids';
+                                                            bgcolor = 'rgba(75, 192, 192, 1)';
+                                                            ydata.push(columns[4])
+                                                            break;
+                                                        case 'doxygen-chart':
+                                                            label = 'Dissolved Oxygen';
+                                                            bgcolor = 'rgba(54, 162, 235,1)';
+                                                            ydata.push(columns[5])
+                                                            break;
+
+                                                    }
+
+                                                });
+                                                return { xlabels, ydata, label, bgcolor };
                                             }
                                         </script>
 
