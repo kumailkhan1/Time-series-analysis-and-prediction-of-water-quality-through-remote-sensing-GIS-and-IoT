@@ -6,7 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 
 <head>
-    <title>Dashboard</title>
+    <title>Predictions</title>
     <base href="/">
     <script src="/dashboard/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -124,7 +124,7 @@
                                     <div class="page-header-title">
                                         <i class="feather icon-home bg-c-blue"></i>
                                         <div class="d-inline" id="dd">
-                                            <h5>WQI Predictions using LSTM</h5>
+                                            <h5>WQI Predictions using LSTM and Vector Auto-Regression</h5>
                                             <span></span>
                                         </div>
                                     </div>
@@ -135,7 +135,8 @@
                                             <li class="breadcrumb-item">
                                                 <a href="dashboard/index.html"><i class="feather icon-home"></i></a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">WQI Predictions using LSTM</a> </li>
+                                            <li class="breadcrumb-item"><a href="#!">Predictions using LSTM and VAR</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -154,19 +155,19 @@
                                                         <h5>Future Predictions using LSTM</h5>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-md-6 col-xl-4">
+                                                        <div class="col-md-6 col-xl-6">
                                                             <canvas id="temperature-chart"></canvas>
                                                         </div>
-                                                        <div class="col-md-6 col-xl-4">
+                                                        <div class="col-md-6 col-xl-6">
                                                             <canvas id="turbidity-chart"></canvas>
                                                         </div>
-                                                        <div class="col-md-6 col-xl-4">
+                                                        <div class="col-md-6 col-xl-6">
                                                             <canvas id="ph-chart"></canvas>
                                                         </div>
-                                                        <div class="col-md-6 col-xl-4">
+                                                        <div class="col-md-6 col-xl-6">
                                                             <canvas id="dsolids-chart"></canvas>
                                                         </div>
-                                                        <div class="col-md-6 col-xl-4">
+                                                        <div class="col-md-6 col-xl-6">
                                                             <canvas id="doxygen-chart"></canvas>
                                                         </div>
                                                     </div>
@@ -185,25 +186,46 @@
                                             drawChart('doxygen-chart');
 
                                             async function drawChart(id) {
-                                                let rawdata = await fetch('dashboard/Predictions.csv');
+                                                let rawdata = await fetch('dashboard/Predictions_LSTM.csv');
                                                 rawdata = await rawdata.text();
-                                                let data = await getData(rawdata, id)
+                                                let data = await getData(rawdata, id);
+
+                                                let validation = await fetch('dashboard/Validation_realValues.csv');
+                                                validation = await validation.text();
+                                                validation = await getData(validation, id);
+
                                                 let label;
 
                                                 var ctx = document.getElementById(id).getContext('2d');
+                                                let firstDataset = data.ydata.slice(0, 20);
+                                                firstDataset = firstDataset.concat(validation.ydata);
+                                                console.log(firstDataset);
+                                                let secondDataset = firstDataset.slice(0, 20).fill(null);
+                                                secondDataset = secondDataset.concat(data.ydata.slice(20, 40))
                                                 var myChart = new Chart(ctx, {
                                                     type: 'line',
                                                     data: {
                                                         labels: data.xlabels,
-                                                        datasets: [{
-                                                            label: data.label,
-                                                            data: data.ydata,
-                                                            fill: false,
-                                                            borderColor: data.bgcolor,
+                                                        datasets: [
+                                                            {
+                                                                label: data.label,
+                                                                data: firstDataset,
+                                                                fill: false,
+                                                                borderColor: 'green',
+                                                                borderWidth: 1
+                                                            },
 
-                                                            borderWidth: 1
-                                                        }]
+                                                            {
+
+                                                                label: "Predicted Values",
+                                                                data: secondDataset,
+                                                                fill: false,
+                                                                borderColor: 'rgb(255,0,0)',
+                                                                borderWidth: 1
+                                                            }
+                                                        ]
                                                     },
+
 
                                                 });
                                             }
@@ -260,7 +282,166 @@
 
 
 
-                                
+
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h5>Future Predictions using Vector Auto-Regression</h5>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xl-6">
+                                                            <canvas id="temperature-chart-2"></canvas>
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-6">
+                                                            <canvas id="turbidity-chart-2"></canvas>
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-6">
+                                                            <canvas id="ph-chart-2"></canvas>
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-6">
+                                                            <canvas id="dsolids-chart-2"></canvas>
+                                                        </div>
+                                                        <div class="col-md-6 col-xl-6">
+                                                            <canvas id="doxygen-chart-2"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                        <script>
+
+                                            drawChart2('temperature-chart-2');
+                                            drawChart2('turbidity-chart-2');
+                                            drawChart2('ph-chart-2');
+                                            drawChart2('dsolids-chart-2')
+                                            drawChart2('doxygen-chart-2');
+
+                                            async function drawChart2(id) {
+                                                let rawdata = await fetch('dashboard/Predictions_VAR.csv');
+                                                rawdata = await rawdata.text();
+                                                let data = await getData2(rawdata, id);
+
+                                                let validation = await fetch('dashboard/Validation_realValues.csv');
+                                                validation = await validation.text();
+                                                validation = await getData2(validation, id);
+
+                                                let label;
+
+                                                var ctx = document.getElementById(id).getContext('2d');
+                                                let firstDataset = data.ydata.slice(0, 20);
+                                                firstDataset = firstDataset.concat(validation.ydata);
+                                                console.log(firstDataset);
+                                                let secondDataset = firstDataset.slice(0, 20).fill(null);
+                                                secondDataset = secondDataset.concat(data.ydata.slice(20, 40))
+                                                var myChart = new Chart(ctx, {
+                                                    type: 'line',
+                                                    data: {
+                                                        labels: data.xlabels,
+                                                        datasets: [
+                                                            {
+                                                                label: data.label,
+                                                                data: firstDataset,
+                                                                fill: false,
+                                                                borderColor: 'green',
+                                                                borderWidth: 1
+                                                            },
+
+                                                            {
+
+                                                                label: "Predicted Values",
+                                                                data: secondDataset,
+                                                                fill: false,
+                                                                borderColor: 'rgb(255,0,0)',
+                                                                borderWidth: 1
+                                                            }
+                                                        ]
+                                                    },
+                                                    options: {
+                                                        scales: {
+                                                            y: {
+                                                                ticks: {
+                                                                    // Include a dollar sign in the ticks
+                                                                    callback: function (value, index, values) {
+                                                                        return '$' + value;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+
+                                                });
+                                            }
+
+                                            async function getData2(data, flag) {
+                                                let xlabels = [];
+                                                let ydata = [];
+                                                let label;
+                                                let bgcolor;
+                                                // make row of array after every new line 
+                                                // and then skip the first line containing (date,temperature etc) headers
+                                                // return the data as array
+                                                const table = data.split('\n').slice(1);
+                                                table.forEach(row => {
+                                                    const columns = row.split(',');
+                                                    // columns[0] contains date
+                                                    const year = columns[0];
+                                                    xlabels.push(year);
+
+                                                    // returning other data based on flag
+                                                    switch (flag) {
+                                                        case 'temperature-chart-2':
+                                                            label = 'Temperature';
+                                                            bgcolor = 'rgba(255, 99, 132, 1)';
+                                                            ydata.push(columns[1])
+                                                            break;
+                                                        case 'turbidity-chart-2':
+                                                            label = 'Turbidity';
+                                                            bgcolor = 'rgba(255, 159, 64, 1)';
+                                                            ydata.push(columns[2])
+                                                            break;
+                                                        case 'ph-chart-2':
+                                                            label = 'pH';
+                                                            bgcolor = 'rgba(255, 205, 86, 1)';
+                                                            ydata.push(columns[3])
+                                                            break;
+                                                        case 'dsolids-chart-2':
+                                                            label = 'Dissolved Solids';
+                                                            bgcolor = 'rgba(75, 192, 192, 1)';
+                                                            ydata.push(columns[4])
+                                                            break;
+                                                        case 'doxygen-chart-2':
+                                                            label = 'Dissolved Oxygen';
+                                                            bgcolor = 'rgba(54, 162, 235,1)';
+                                                            ydata.push(columns[5])
+                                                            break;
+
+                                                    }
+
+                                                });
+                                                return { xlabels, ydata, label, bgcolor };
+                                            }
+                                        </script>
+
+
+
+
 
 
 
