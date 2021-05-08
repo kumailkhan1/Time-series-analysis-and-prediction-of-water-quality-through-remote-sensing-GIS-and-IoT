@@ -1,8 +1,6 @@
 const express = require('express');
 const path = require('path');
-const router = express.Router();
-const tf = require('@tensorflow/tfjs');
-const { json } = require('express');
+
 
 exports.dashboardRouter = function (req, res) {
 
@@ -11,8 +9,3 @@ exports.dashboardRouter = function (req, res) {
 
 };
 
-
-exports.predict = async function (req, res, next) {
-
-
-}
