@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
+<head>
+    <title>Yearly Analysis</title>
+    <base href="/">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description"
+        content="Time series analysis of water quality using data from multiple sources like RS, GIS and IoT" />
+    <meta name="keywords"
+        content="water quality index, water quality parameters, machine learning, Remote sensing, geographic information system, iot">
+    <meta name="author" content="Hassan Kumail Ali" />
+
+    <link rel="icon" href="https://colorlib.com/polygon/admindek/files/assets/images/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="dashboard/css/waves.min.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/feather.css">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/font-awesome-n.min.css">
+
+    <link rel="stylesheet" href="dashboard/css/chartist.css" type="text/css" media="all">
+
+    <link rel="stylesheet" type="text/css" href="dashboard/css/style.css">
+    <link rel="stylesheet" type="text/css" href="dashboard/css/widget.css">
+</head>
+
+<body>
+
+
+
+    <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div>
+
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+                    <div class="navbar-logo">
+                        <a href="index.html">
+                            <img class="img-fluid" src="dashboard/png/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="feather icon-menu icon-toggle-right"></i>
+                        </a>
+                        <a class="mobile-options waves-effect waves-light">
+                            <i class="feather icon-more-horizontal"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li class="header-search">
+                                <div class="main-search morphsearch-search">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend search-close">
+                                            <i class="feather icon-x input-group-text"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Enter Keyword">
+                                        <span class="input-group-append search-btn">
+                                            <i class="feather icon-search input-group-text"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#!"
+                                    onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:toggleFullScreen()"
+                                    class="waves-effect waves-light" data-cf-modified-d2d1d6e2f87cbebdf4013b26-="">
+                                    <i class="full-screen feather icon-maximize"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+
+
+                    <nav id="common-nav" class="pcoded-navbar">
+
+                    </nav>
+                    <script>
+                        getHeader();
+                        async function getHeader() {
+                            let header = await fetch('dashboard/header.html');
+                            header = await header.text();
+                            document.getElementById('common-nav').innerHTML = header;
+                        }
+
+                    </script>
+                    <div class="pcoded-content">
+
+                        <div class="page-header card">
+                            <div class="row align-items-end">
+                                <div class="col-lg-8">
+                                    <div class="page-header-title">
+                                        <i class="feather icon-home bg-c-blue"></i>
+                                        <div class="d-inline" id="dd">
+                                            <h5>Yearly Analysis of Water Quality</h5>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="page-header-breadcrumb">
+                                        <ul class=" breadcrumb breadcrumb-title">
+                                            <li class="breadcrumb-item">
+                                                <a href="dashboard/Yearly.html"><i class="feather icon-home"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="#!">Yearly Analysis</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h5>Water Quality Index 2013-2020</h5>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-12">
+                                                            <canvas id="WQI-chart"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h5>Temperature 2013-2020</h5>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-12">
+                                                            <canvas id="Temperature-chart"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h5>Turbidity 2013-2020</h5>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-12">
+                                                            <canvas id="Tubidity-chart"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h5>pH 2013-2020</h5>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-12">
+                                                            <canvas id="pH-chart"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h5>Dissolved Oxygen 2013-2020</h5>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-12">
+                                                            <canvas id="DO-chart"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <div class="page-body">
+
+                                        <div class="row">
+                                            <div class="col-md-12 col-xl-12">
+                                                <div class="card sale-card">
+                                                    <div class="card-header">
+                                                        <h5>Dissolved Solids 2013-2020</h5>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12 col-xl-12">
+                                                            <canvas id="DS-chart"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+                </div>
+
+                <div id="styleSelector">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script data-cfasync="false" src="dashboard/js/email-decode.min.js"></script>
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="dashboard/js/jquery.min.js"></script>
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="dashboard/js/jquery-ui.min.js"></script>
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="dashboard/js/popper.min.js"></script>
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="dashboard/js/bootstrap.min.js"></script>
+
+    <script src="dashboard/js/waves.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="dashboard/js/jquery.slimscroll.js"></script>
+
+    <script src="dashboard/js/jquery.flot.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script src="dashboard/js/jquery.flot.categories.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script src="dashboard/js/curvedlines.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script src="dashboard/js/jquery.flot.tooltip.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+
+    <script src="dashboard/js/chartist.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+    <script src="dashboard/js/amcharts.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script src="dashboard/js/serial.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script src="dashboard/js/light.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+
+    <script src="dashboard/js/pcoded.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script src="dashboard/js/vertical-layout.min.js" type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="dashboard/js/custom-dashboard.min.js"></script>
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript" src="dashboard/js/script.min.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"
+        type="d2d1d6e2f87cbebdf4013b26-text/javascript"></script>
+    <script type="d2d1d6e2f87cbebdf4013b26-text/javascript">
+
+</script>
+    <script src="dashboard/js/rocket-loader.min.js" data-cf-settings="d2d1d6e2f87cbebdf4013b26-|49" defer=""></script>
+    <script src="/dashboard/Yearly.js"></script>
+</body>
+
+<!-- Mirrored from colorlib.com/polygon/admindek/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 12 Dec 2019 16:08:25 GMT -->
+
+</html>
