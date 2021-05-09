@@ -376,6 +376,17 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
+      options: {
+        scales: {
+          y: {
+            max: 175,
+            // min: 0,
+            ticks: {
+              stepSize: 2,
+            },
+          },
+        },
+      },
     });
   }
   DrawChart2();
@@ -511,6 +522,17 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             borderWidth: 1,
           },
         ],
+      },
+      options: {
+        scales: {
+          y: {
+            max: 255,
+            // min: 0,
+            ticks: {
+              stepSize: 2,
+            },
+          },
+        },
       },
     });
   }

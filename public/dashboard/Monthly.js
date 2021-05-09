@@ -1,6 +1,6 @@
 const xlabel = [
-  "Jan",
-  "Feb",
+  "January",
+  "February",
   "March",
   "April",
   "May",
@@ -69,7 +69,7 @@ const TDSLabel8 = [];
 const WQILabel8 = [];
 
 async function ChartIt(id1, id2, id3, id4, id5, id6) {
-  let response1 = await fetch("dashboard/Yearly_Datasets/Yearly2013.csv");
+  let response1 = await fetch("dashboard/Monthly_Datasets/Monthly2013.csv");
   const data1 = await response1.text();
   const table1 = data1.split("\n").slice(1);
 
@@ -91,15 +91,13 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response2 = await fetch("dashboard/Yearly_Datasets/Yearly2014.csv");
+  let response2 = await fetch("dashboard/Monthly_Datasets/Monthly2014.csv");
   const data2 = await response2.text();
   const table2 = data2.split("\n").slice(1);
 
   async function getData2() {
     table2.forEach((row) => {
       const columns = row.split(",");
-      //   const date = columns[0];
-      //   xlabel.push(date);
       const temp = columns[1];
       tempLabel2.push(temp);
       const turb = columns[2];
@@ -115,7 +113,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response3 = await fetch("dashboard/Yearly_Datasets/Yearly2015.csv");
+  let response3 = await fetch("dashboard/Monthly_Datasets/Monthly2015.csv");
   const data3 = await response3.text();
   const table3 = data3.split("\n").slice(1);
 
@@ -137,7 +135,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response4 = await fetch("dashboard/Yearly_Datasets/Yearly2016.csv");
+  let response4 = await fetch("dashboard/Monthly_Datasets/Monthly2016.csv");
   const data4 = await response4.text();
   const table4 = data4.split("\n").slice(1);
 
@@ -159,7 +157,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response5 = await fetch("dashboard/Yearly_Datasets/Yearly2017.csv");
+  let response5 = await fetch("dashboard/Monthly_Datasets/Monthly2017.csv");
   const data5 = await response5.text();
   const table5 = data5.split("\n").slice(1);
 
@@ -181,7 +179,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response6 = await fetch("dashboard/Yearly_Datasets/Yearly2018.csv");
+  let response6 = await fetch("dashboard/Monthly_Datasets/Monthly2018.csv");
   const data6 = await response6.text();
   const table6 = data6.split("\n").slice(1);
 
@@ -202,7 +200,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
       WQILabel6.push(WQI);
     });
   }
-  let response7 = await fetch("dashboard/Yearly_Datasets/Yearly2019.csv");
+  let response7 = await fetch("dashboard/Monthly_Datasets/Monthly2019.csv");
   const data7 = await response7.text();
   const table7 = data7.split("\n").slice(1);
 
@@ -224,7 +222,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response8 = await fetch("dashboard/Yearly_Datasets/Yearly2020.csv");
+  let response8 = await fetch("dashboard/Monthly_Datasets/Monthly2020.csv");
   const data8 = await response8.text();
   const table8 = data8.split("\n").slice(1);
 
@@ -258,7 +256,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
   async function DrawChart1() {
     const ctx = document.getElementById(id1).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -327,7 +325,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
   async function DrawChart2() {
     const ctx = document.getElementById(id2).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -389,24 +387,24 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      options: {
-        scales: {
-          y: {
-            max: 30,
-            min: 0,
-            ticks: {
-              stepSize: 5,
-            },
-          },
-        },
-      },
+      //   options: {
+      //     scales: {
+      //       y: {
+      //         max: 30,
+      //         min: 0,
+      //         ticks: {
+      //           stepSize: 5,
+      //         },
+      //       },
+      //     },
+      //   },
     });
   }
   DrawChart2();
   async function DrawChart3() {
     const ctx = document.getElementById(id3).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -468,24 +466,24 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      options: {
-        scales: {
-          y: {
-            max: 300,
-            min: 0,
-            ticks: {
-              stepSize: 50,
-            },
-          },
-        },
-      },
+      //   options: {
+      //     scales: {
+      //       y: {
+      //         max: 300,
+      //         min: 0,
+      //         ticks: {
+      //           stepSize: 50,
+      //         },
+      //       },
+      //     },
+      //   },
     });
   }
   DrawChart3();
   async function DrawChart4() {
     const ctx = document.getElementById(id4).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -547,24 +545,24 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      options: {
-        scales: {
-          y: {
-            max: 14,
-            min: 0,
-            ticks: {
-              stepSize: 2,
-            },
-          },
-        },
-      },
+      //   options: {
+      //     scales: {
+      //       y: {
+      //         max: 14,
+      //         min: 0,
+      //         ticks: {
+      //           stepSize: 2,
+      //         },
+      //       },
+      //     },
+      //   },
     });
   }
   DrawChart4();
   async function DrawChart5() {
     const ctx = document.getElementById(id5).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -626,24 +624,24 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      options: {
-        scales: {
-          y: {
-            max: 10,
-            min: 0,
-            ticks: {
-              stepSize: 2,
-            },
-          },
-        },
-      },
+      //   options: {
+      //     scales: {
+      //       y: {
+      //         max: 10,
+      //         min: 0,
+      //         ticks: {
+      //           stepSize: 2,
+      //         },
+      //       },
+      //     },
+      //   },
     });
   }
   DrawChart5();
   async function DrawChart6() {
     const ctx = document.getElementById(id6).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
