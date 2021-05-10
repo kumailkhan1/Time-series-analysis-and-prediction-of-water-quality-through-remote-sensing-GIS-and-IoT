@@ -1,68 +1,69 @@
-const xlabel = [];
-const tempLabel1 = [];
-const turbLabel1 = [];
-const pHLabel1 = [];
-const DOLabel1 = [];
-const TDSLabel1 = [];
-const WQILabel1 = [];
+async function ChartIt(
+  filepath1,
+  filepath2,
+  filepath3,
+  filepath4,
+  filepath5,
+  filepath6,
+  id1,
+  id2,
+  id3,
+  id4,
+  id5,
+  id6
+) {
+  const xlabel = [];
+  const tempLabel1 = [];
+  const turbLabel1 = [];
+  const pHLabel1 = [];
+  const DOLabel1 = [];
+  const TDSLabel1 = [];
+  const WQILabel1 = [];
 
-const tempLabel2 = [];
-const turbLabel2 = [];
-const pHLabel2 = [];
-const DOLabel2 = [];
-const TDSLabel2 = [];
-const WQILabel2 = [];
+  const tempLabel2 = [];
+  const turbLabel2 = [];
+  const pHLabel2 = [];
+  const DOLabel2 = [];
+  const TDSLabel2 = [];
+  const WQILabel2 = [];
 
-const tempLabel3 = [];
-const turbLabel3 = [];
-const pHLabel3 = [];
-const DOLabel3 = [];
-const TDSLabel3 = [];
-const WQILabel3 = [];
+  const tempLabel3 = [];
+  const turbLabel3 = [];
+  const pHLabel3 = [];
+  const DOLabel3 = [];
+  const TDSLabel3 = [];
+  const WQILabel3 = [];
 
-const tempLabel4 = [];
-const turbLabel4 = [];
-const pHLabel4 = [];
-const DOLabel4 = [];
-const TDSLabel4 = [];
-const WQILabel4 = [];
+  const tempLabel4 = [];
+  const turbLabel4 = [];
+  const pHLabel4 = [];
+  const DOLabel4 = [];
+  const TDSLabel4 = [];
+  const WQILabel4 = [];
 
-const tempLabel5 = [];
-const turbLabel5 = [];
-const pHLabel5 = [];
-const DOLabel5 = [];
-const TDSLabel5 = [];
-const WQILabel5 = [];
+  const tempLabel5 = [];
+  const turbLabel5 = [];
+  const pHLabel5 = [];
+  const DOLabel5 = [];
+  const TDSLabel5 = [];
+  const WQILabel5 = [];
 
-const tempLabel6 = [];
-const turbLabel6 = [];
-const pHLabel6 = [];
-const DOLabel6 = [];
-const TDSLabel6 = [];
-const WQILabel6 = [];
+  const tempLabel6 = [];
+  const turbLabel6 = [];
+  const pHLabel6 = [];
+  const DOLabel6 = [];
+  const TDSLabel6 = [];
+  const WQILabel6 = [];
 
-const tempLabel7 = [];
-const turbLabel7 = [];
-const pHLabel7 = [];
-const DOLabel7 = [];
-const TDSLabel7 = [];
-const WQILabel7 = [];
-
-const tempLabel8 = [];
-const turbLabel8 = [];
-const pHLabel8 = [];
-const DOLabel8 = [];
-const TDSLabel8 = [];
-const WQILabel8 = [];
-
-async function ChartIt(id1, id2, id3, id4, id5, id6) {
-  let response1 = await fetch("dashboard/Yearly_Datasets/Yearly2013.csv");
+  let response1 = await fetch(filepath1);
   const data1 = await response1.text();
   const table1 = data1.split("\n").slice(1);
 
   async function getData1() {
     table1.forEach((row) => {
       const columns = row.split(",");
+      const date = columns[0];
+      xlabel.push(date);
       const temp = columns[1];
       tempLabel1.push(temp);
       const turb = columns[2];
@@ -78,7 +79,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response2 = await fetch("dashboard/Yearly_Datasets/Yearly2014.csv");
+  let response2 = await fetch(filepath2);
   const data2 = await response2.text();
   const table2 = data2.split("\n").slice(1);
 
@@ -100,15 +101,13 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response3 = await fetch("dashboard/Yearly_Datasets/Yearly2015.csv");
+  let response3 = await fetch(filepath3);
   const data3 = await response3.text();
   const table3 = data3.split("\n").slice(1);
 
   async function getData3() {
     table3.forEach((row) => {
       const columns = row.split(",");
-      const date = columns[0];
-      xlabel.push(date);
       const temp = columns[1];
       tempLabel3.push(temp);
       const turb = columns[2];
@@ -124,7 +123,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response4 = await fetch("dashboard/Yearly_Datasets/Yearly2016.csv");
+  let response4 = await fetch(filepath4);
   const data4 = await response4.text();
   const table4 = data4.split("\n").slice(1);
 
@@ -146,7 +145,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response5 = await fetch("dashboard/Yearly_Datasets/Yearly2017.csv");
+  let response5 = await fetch(filepath5);
   const data5 = await response5.text();
   const table5 = data5.split("\n").slice(1);
 
@@ -168,7 +167,7 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
     });
   }
 
-  let response6 = await fetch("dashboard/Yearly_Datasets/Yearly2018.csv");
+  let response6 = await fetch(filepath6);
   const data6 = await response6.text();
   const table6 = data6.split("\n").slice(1);
 
@@ -189,49 +188,6 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
       WQILabel6.push(WQI);
     });
   }
-  let response7 = await fetch("dashboard/Yearly_Datasets/Yearly2019.csv");
-  const data7 = await response7.text();
-  const table7 = data7.split("\n").slice(1);
-
-  async function getData7() {
-    table7.forEach((row) => {
-      const columns = row.split(",");
-      const temp = columns[1];
-      tempLabel7.push(temp);
-      const turb = columns[2];
-      turbLabel7.push(turb);
-      const pH = columns[3];
-      pHLabel7.push(pH);
-      const DO = columns[4];
-      DOLabel7.push(DO);
-      const TDS = columns[5];
-      TDSLabel7.push(TDS);
-      const WQI = columns[6];
-      WQILabel7.push(WQI);
-    });
-  }
-
-  let response8 = await fetch("dashboard/Yearly_Datasets/Yearly2020.csv");
-  const data8 = await response8.text();
-  const table8 = data8.split("\n").slice(1);
-
-  async function getData8() {
-    table8.forEach((row) => {
-      const columns = row.split(",");
-      const temp = columns[1];
-      tempLabel8.push(temp);
-      const turb = columns[2];
-      turbLabel8.push(turb);
-      const pH = columns[3];
-      pHLabel8.push(pH);
-      const DO = columns[4];
-      DOLabel8.push(DO);
-      const TDS = columns[5];
-      TDSLabel8.push(TDS);
-      const WQI = columns[6];
-      WQILabel8.push(WQI);
-    });
-  }
 
   getData1();
   getData2();
@@ -239,8 +195,6 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
   getData4();
   getData5();
   getData6();
-  getData7();
-  getData8();
 
   async function DrawChart1() {
     const ctx = document.getElementById(id1).getContext("2d");
@@ -250,59 +204,45 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
         labels: xlabel,
         datasets: [
           {
-            label: "2013",
+            label: "2015",
             data: WQILabel1,
-            borderColor: "black",
-            backgroundColor: "black",
+            borderColor: "#e75480",
+            backgroundColor: "#e75480",
             borderWidth: 1,
           },
           {
-            label: "2014",
+            label: "2016",
             data: WQILabel2,
             borderColor: "blue",
             backgroundColor: "blue",
             borderWidth: 1,
           },
           {
-            label: "2015",
+            label: "2017",
             data: WQILabel3,
             borderColor: "orange",
             backgroundColor: "orange",
             borderWidth: 1,
           },
           {
-            label: "2016",
+            label: "2018",
             data: WQILabel4,
             borderColor: "purple",
             backgroundColor: "purple",
             borderWidth: 1,
           },
           {
-            label: "2017",
+            label: "2019",
             data: WQILabel5,
             borderColor: "green",
             backgroundColor: "green",
             borderWidth: 1,
           },
           {
-            label: "2018",
+            label: "2020",
             data: WQILabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
-          },
-          {
-            label: "2019",
-            data: WQILabel7,
-            borderColor: "yellow",
-            backgroundColor: "yellow",
-            borderWidth: 1,
-          },
-          {
-            label: "2020",
-            data: WQILabel8,
-            borderColor: "#e75480",
-            backgroundColor: "#e75480",
             borderWidth: 1,
           },
         ],
@@ -319,74 +259,49 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
         labels: xlabel,
         datasets: [
           {
-            label: "2013",
+            label: "2015",
             data: tempLabel1,
-            borderColor: "black",
-            backgroundColor: "black",
+            borderColor: "#e75480",
+            backgroundColor: "#e75480",
             borderWidth: 1,
           },
           {
-            label: "2014",
+            label: "2016",
             data: tempLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
             borderWidth: 1,
           },
           {
-            label: "2015",
+            label: "2017",
             data: tempLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
             borderWidth: 1,
           },
           {
-            label: "2016",
+            label: "2018",
             data: tempLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
             borderWidth: 1,
           },
           {
-            label: "2017",
+            label: "2019",
             data: tempLabel5,
             borderColor: "green",
             backgroundColor: "green",
             borderWidth: 1,
           },
           {
-            label: "2018",
+            label: "2020",
             data: tempLabel6,
             borderColor: "red",
             backgroundColor: "red",
             borderWidth: 1,
           },
-          {
-            label: "2019",
-            data: tempLabel7,
-            borderColor: "yellow",
-            backgroundColor: "yellow",
-            borderWidth: 1,
-          },
-          {
-            label: "2020",
-            data: tempLabel8,
-            borderColor: "#e75480",
-            backgroundColor: "#e75480",
-            borderWidth: 1,
-          },
         ],
       },
-      // options: {
-      //   scales: {
-      //     y: {
-      //       max: 175,
-      //       // min: 0,
-      //       ticks: {
-      //         stepSize: 2,
-      //       },
-      //     },
-      //   },
-      // },
     });
   }
   DrawChart2();
@@ -398,59 +313,45 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
         labels: xlabel,
         datasets: [
           {
-            label: "2013",
+            label: "2015",
             data: turbLabel1,
-            borderColor: "black",
-            backgroundColor: "black",
+            borderColor: "#e75480",
+            backgroundColor: "#e75480",
             borderWidth: 1,
           },
           {
-            label: "2014",
+            label: "2016",
             data: turbLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
             borderWidth: 1,
           },
           {
-            label: "2015",
+            label: "2017",
             data: turbLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
             borderWidth: 1,
           },
           {
-            label: "2016",
+            label: "2018",
             data: turbLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
             borderWidth: 1,
           },
           {
-            label: "2017",
+            label: "2019",
             data: turbLabel5,
             borderColor: "green",
             backgroundColor: "green",
             borderWidth: 1,
           },
           {
-            label: "2018",
+            label: "2020",
             data: turbLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
-          },
-          {
-            label: "2019",
-            data: turbLabel7,
-            borderColor: "yellow",
-            backgroundColor: "yellow",
-            borderWidth: 1,
-          },
-          {
-            label: "2020",
-            data: turbLabel8,
-            borderColor: "#e75480",
-            backgroundColor: "#e75480",
             borderWidth: 1,
           },
         ],
@@ -466,74 +367,49 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
         labels: xlabel,
         datasets: [
           {
-            label: "2013",
+            label: "2015",
             data: pHLabel1,
-            borderColor: "black",
-            backgroundColor: "black",
+            borderColor: "#e75480",
+            backgroundColor: "#e75480",
             borderWidth: 1,
           },
           {
-            label: "2014",
+            label: "2016",
             data: pHLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
             borderWidth: 1,
           },
           {
-            label: "2015",
+            label: "2017",
             data: pHLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
             borderWidth: 1,
           },
           {
-            label: "2016",
+            label: "2018",
             data: pHLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
             borderWidth: 1,
           },
           {
-            label: "2017",
+            label: "2019",
             data: pHLabel5,
             borderColor: "green",
             backgroundColor: "green",
             borderWidth: 1,
           },
           {
-            label: "2018",
+            label: "2020",
             data: pHLabel6,
             borderColor: "red",
             backgroundColor: "red",
             borderWidth: 1,
           },
-          {
-            label: "2019",
-            data: pHLabel7,
-            borderColor: "yellow",
-            backgroundColor: "yellow",
-            borderWidth: 1,
-          },
-          {
-            label: "2020",
-            data: pHLabel8,
-            borderColor: "#e75480",
-            backgroundColor: "#e75480",
-            borderWidth: 1,
-          },
         ],
       },
-      // options: {
-      //   scales: {
-      //     y: {
-      //       max: 255,
-      //       // min: 0,
-      //       ticks: {
-      //         stepSize: 2,
-      //       },
-      //     },
-      //   },
-      // },
     });
   }
   DrawChart4();
@@ -545,59 +421,45 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
         labels: xlabel,
         datasets: [
           {
-            label: "2013",
+            label: "2015",
             data: DOLabel1,
-            borderColor: "black",
-            backgroundColor: "black",
+            borderColor: "#e75480",
+            backgroundColor: "#e75480",
             borderWidth: 1,
           },
           {
-            label: "2014",
+            label: "2016",
             data: DOLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
             borderWidth: 1,
           },
           {
-            label: "2015",
+            label: "2017",
             data: DOLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
             borderWidth: 1,
           },
           {
-            label: "2016",
+            label: "2018",
             data: DOLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
             borderWidth: 1,
           },
           {
-            label: "2017",
+            label: "2019",
             data: DOLabel5,
             borderColor: "green",
             backgroundColor: "green",
             borderWidth: 1,
           },
           {
-            label: "2018",
+            label: "2020",
             data: DOLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
-          },
-          {
-            label: "2019",
-            data: DOLabel7,
-            borderColor: "yellow",
-            backgroundColor: "yellow",
-            borderWidth: 1,
-          },
-          {
-            label: "2020",
-            data: DOLabel8,
-            borderColor: "#e75480",
-            backgroundColor: "#e75480",
             borderWidth: 1,
           },
         ],
@@ -613,59 +475,45 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
         labels: xlabel,
         datasets: [
           {
-            label: "2013",
+            label: "2015",
             data: TDSLabel1,
-            borderColor: "black",
-            backgroundColor: "black",
+            borderColor: "#e75480",
+            backgroundColor: "#e75480",
             borderWidth: 1,
           },
           {
-            label: "2014",
+            label: "2016",
             data: TDSLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
             borderWidth: 1,
           },
           {
-            label: "2015",
+            label: "2017",
             data: TDSLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
             borderWidth: 1,
           },
           {
-            label: "2016",
+            label: "2018",
             data: TDSLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
             borderWidth: 1,
           },
           {
-            label: "2017",
+            label: "2019",
             data: TDSLabel5,
             borderColor: "green",
             backgroundColor: "green",
             borderWidth: 1,
           },
           {
-            label: "2018",
+            label: "2020",
             data: TDSLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
-          },
-          {
-            label: "2019",
-            data: TDSLabel7,
-            borderColor: "yellow",
-            backgroundColor: "yellow",
-            borderWidth: 1,
-          },
-          {
-            label: "2020",
-            data: TDSLabel8,
-            borderColor: "#e75480",
-            backgroundColor: "#e75480",
             borderWidth: 1,
           },
         ],
@@ -676,10 +524,31 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
   DrawChart6();
 }
 ChartIt(
-  "WQI-chart",
-  "Temperature-chart",
-  "Tubidity-chart",
-  "pH-chart",
-  "DO-chart",
-  "DS-chart"
+  "dashboard/Summer_Datasets/Summer_2015.csv",
+  "dashboard/Summer_Datasets/Summer_2016.csv",
+  "dashboard/Summer_Datasets/Summer_2017.csv",
+  "dashboard/Summer_Datasets/Summer_2018.csv",
+  "dashboard/Summer_Datasets/Summer_2019.csv",
+  "dashboard/Summer_Datasets/Summer_2020.csv",
+  "WQI_Summer",
+  "temp_Summer",
+  "turb_Summer",
+  "ph_Summer",
+  "DO_Summer",
+  "DS_Summer"
+);
+
+ChartIt(
+  "dashboard/Winter_Datasets/Winter_2015.csv",
+  "dashboard/Winter_Datasets/Winter_2016.csv",
+  "dashboard/Winter_Datasets/Winter_2017.csv",
+  "dashboard/Winter_Datasets/Winter_2018.csv",
+  "dashboard/Winter_Datasets/Winter_2019.csv",
+  "dashboard/Winter_Datasets/Winter_2020.csv",
+  "WQI_Winter",
+  "temp_Winter",
+  "turb_Winter",
+  "ph_Winter",
+  "DO_Winter",
+  "DS_Winter"
 );
