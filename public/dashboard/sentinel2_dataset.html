@@ -268,7 +268,7 @@
         }
 
         d3.csv('dashboard/Sentinel2_Non-Interpolated.csv', function (data) {
-            var columns = ['Date','Dissolved Oxygen','Total Suspended Solids','Turbidity','Chlorophyll'];
+            var columns = ['Date','Dissolved Oxygen (mg/l)','Total Suspended Solids (mg/l)','Turbidity (mg/l)','Chlorophyll (mg/l)'];
             tabulate(data, columns);
         });
     </script>

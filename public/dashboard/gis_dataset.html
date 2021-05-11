@@ -268,7 +268,7 @@
         }
 
         d3.csv('dashboard/GIS Dataset.csv', function (data) {
-            var columns = ['Date','Temperature','Turbidity','pH','Dissolved Oxygen','Dissolved Solids'];
+            var columns = ['Date','Temperature (°C)','Turbidity (mg/l)','pH','Dissolved Oxygen (mg/l)','Dissolved Solids (mg/l)'];
             tabulate(data, columns);
         });
     </script>
