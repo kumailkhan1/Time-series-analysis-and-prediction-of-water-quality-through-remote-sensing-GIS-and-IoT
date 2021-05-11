@@ -1,4 +1,4 @@
-Date,Temperature,Turbidity,pH,Dissolved Oxygen,Total Suspended Solids
+Date,Temperature ©,Turbidity (mg/l),pH,Dissolved Oxygen (mg/l),Total Suspended Solids (mg/l)
 7/1/2015,282.15,14,7.2,3,301
 23-01-15,285.15,20,7.17,2.1,269
 8/2/2015,282.15,23,7.28,3.6,320

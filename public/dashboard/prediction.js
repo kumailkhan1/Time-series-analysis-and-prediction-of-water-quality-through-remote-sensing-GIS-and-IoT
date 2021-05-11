@@ -1,8 +1,17 @@
-
+var tempMsg = document.getElementById('temp-val'),
+    turbidityMsg = document.getElementById('turbidity-val'),
+    phMsg = document.getElementById('ph-val'),
+    dsolidsMsg = document.getElementById('dsolids-val'),
+    doxygenMsg = document.getElementById('doxygen-val');
 
 document.getElementById('predictBtn').addEventListener('click', async () => {
     // document.getElementById("headline").innerText = "Form is working!";
-
+    document.getElementById('model-output').textContent = "";
+    tempMsg.style.display = "none";
+    turbidityMsg.style.display = "none";
+    phMsg.style.display = "none";
+    dsolidsMsg.style.display = "none";
+    doxygenMsg.style.display = "none";
 
     let temperature = parseFloat(document.getElementById("temperature").value),
         turbidity = parseFloat(document.getElementById("turbidity").value),
@@ -12,12 +21,7 @@ document.getElementById('predictBtn').addEventListener('click', async () => {
 
 
     // Validate Inputs
-    let validation = validateInput(temperature,
-        turbidity,
-        ph,
-        dsolids,
-        doxygen);
-
+    let validation = validateInput(temperature, turbidity, ph, dsolids, doxygen);
     if (!validation) {
         return;
     }
@@ -52,23 +56,43 @@ document.getElementById('predictBtn').addEventListener('click', async () => {
 });
 
 
-function validateInput(temperature,turbidity,ph,dsolids,doxygen) {
+function validateInput(temperature, turbidity, ph, dsolids, doxygen) {
 
+    let validation = true;
     if (isNaN(temperature) || isNaN(turbidity) || isNaN(ph) || isNaN(dsolids) || isNaN(doxygen)) {
         document.getElementById('model-output').textContent = "Value of WQPs can't be empty.";
-        return;
-    }
-    let tempMsg = document.getElementById('temp-val'),
-        turbidityMsg = document.getElementById('turbidity-val'),
-        phMsg = document.getElementById('ph-val'),
-        dsolidsMsg = document.getElementById('dsolids-val'),
-        doxygenMsg = document.getElementById('doxygen-val');
-
-    if (!(0 < temperature < 50)) {
-        tempMsg.innerText = "Temperature value should be in range 0 to 50"
+        validation = false;
     }
 
-    if (!(0 < temperature < 50)) {
-        turbidityMsg.innerText = "Temperature value should be in range 0 to 50"
+
+    if (!(temperature >= 0 && temperature <= 50)) {
+        tempMsg.innerText = "Temperature value should be in range 0 to 50 °C"
+        tempMsg.style.display = "block";
+
+        validation = false;
     }
+    if (!(turbidity >= 0 && turbidity <= 1400)) {
+        turbidityMsg.innerText = "Turbidity value should be in range 0 to 1400 mg/l"
+        turbidityMsg.style.display = "block";
+
+        validation = false;
+    }
+    if (!(ph >= 0 && ph <= 14)) {
+        phMsg.innerText = "pH value should be in range 0 to 14"
+        phMsg.style.display = "block";
+
+        validation = false;
+    }
+    if (!(dsolids >= 0 && dsolids <= 500)) {
+        dsolidsMsg.innerText = "Dissolved Solids value should be in range 0 to 500 mg/l"
+        validation = false;
+        dsolidsMsg.style.display = "block";
+    }
+    if (!(doxygen >= 0 && doxygen <= 200)) {
+        doxygenMsg.innerText = "Dissolved Oxygen value should be in range 0 to 200 mg/l"
+        validation = false;
+        doxygenMsg.style.display = "block";
+        
+    }
+    return validation;
 }
