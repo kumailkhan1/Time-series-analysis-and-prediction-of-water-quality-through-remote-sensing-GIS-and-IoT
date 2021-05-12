@@ -85,6 +85,35 @@ async function ChartIt(filepath1, filepath2, id) {
           },
         ],
       },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Canadian Water Quality Index",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart();

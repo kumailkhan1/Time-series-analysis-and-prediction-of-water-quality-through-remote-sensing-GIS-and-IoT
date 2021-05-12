@@ -125,7 +125,7 @@
                                     <div class="page-header-title">
                                         <i class="feather icon-home bg-c-blue"></i>
                                         <div class="d-inline" id="dd">
-                                            <h5>WQI Predictions using LSTM and Vector Auto-Regression</h5>
+                                            <h5>Water Quality Parameters Predictions using LSTM and Vector Auto-Regression</h5>
                                             <span></span>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                                         labels: data.xlabels,
                                                         datasets: [
                                                             {
-                                                                label: data.label,
+                                                                label: "Actual "+data.label,
                                                                 data: firstDataset,
                                                                 fill: false,
                                                                 borderColor: 'green',
@@ -218,7 +218,7 @@
 
                                                             {
 
-                                                                label: "Predicted Values",
+                                                                label: "Predicted Values of "+data.label,
                                                                 data: secondDataset,
                                                                 fill: false,
                                                                 borderColor: 'rgb(255,0,0)',
@@ -226,6 +226,31 @@
                                                             }
                                                         ]
                                                     },
+                                                    options: {
+                                                            scales: {
+                                                            x: {
+                                                                title: {
+                                                                display: true,
+                                                                text: "Date",
+                                                                font: {
+                                                                    size: 12,
+                                                                    weight: "bold",
+                                                                },
+                                                                },
+                                                            },
+                                                            y: {
+                                                                title: {
+                                                                display: true,
+                                                                text: data.label,
+                                                                font: {
+                                                                    size: 12,
+                                                                    weight: "bold",
+                                                                },
+                                                                },
+                                                            },
+                                                            },
+                                                        },
+                                                    
 
 
                                                 });
@@ -249,12 +274,12 @@
                                                     // returning other data based on flag
                                                     switch (flag) {
                                                         case 'temperature-chart':
-                                                            label = 'Temperature';
+                                                            label = 'Temperature(°C)';
                                                             bgcolor = 'rgba(255, 99, 132, 1)';
                                                             ydata.push(columns[1])
                                                             break;
                                                         case 'turbidity-chart':
-                                                            label = 'Turbidity';
+                                                            label = 'Turbidity(NTU)';
                                                             bgcolor = 'rgba(255, 159, 64, 1)';
                                                             ydata.push(columns[2])
                                                             break;
@@ -264,12 +289,12 @@
                                                             ydata.push(columns[3])
                                                             break;
                                                         case 'dsolids-chart':
-                                                            label = 'Dissolved Solids';
+                                                            label = 'Dissolved Solids(mg/l)';
                                                             bgcolor = 'rgba(75, 192, 192, 1)';
                                                             ydata.push(columns[4])
                                                             break;
                                                         case 'doxygen-chart':
-                                                            label = 'Dissolved Oxygen';
+                                                            label = 'Dissolved Oxygen(mg/l)';
                                                             bgcolor = 'rgba(54, 162, 235,1)';
                                                             ydata.push(columns[5])
                                                             break;
@@ -357,7 +382,7 @@
                                                         labels: data.xlabels,
                                                         datasets: [
                                                             {
-                                                                label: data.label,
+                                                                label: "Actual "+data.label,
                                                                 data: firstDataset,
                                                                 fill: false,
                                                                 borderColor: 'green',
@@ -366,7 +391,7 @@
 
                                                             {
 
-                                                                label: "Predicted Values",
+                                                                label: "Predicted Values of "+data.label,
                                                                 data: secondDataset,
                                                                 fill: false,
                                                                 borderColor: 'rgb(255,0,0)',
@@ -374,7 +399,31 @@
                                                             }
                                                         ]
                                                     },
-        
+                                                    options: {
+                                                            scales: {
+                                                            x: {
+                                                                title: {
+                                                                display: true,
+                                                                text: "Date",
+                                                                font: {
+                                                                    size: 12,
+                                                                    weight: "bold",
+                                                                },
+                                                                },
+                                                            },
+                                                            y: {
+                                                                title: {
+                                                                display: true,
+                                                                text: data.label,
+                                                                font: {
+                                                                    size: 12,
+                                                                    weight: "bold",
+                                                                },
+                                                                },
+                                                            },
+                                                            },
+                                                        },
+                                                    
 
                                                 });
                                             }
@@ -397,12 +446,13 @@
                                                     // returning other data based on flag
                                                     switch (flag) {
                                                         case 'temperature-chart-2':
-                                                            label = 'Temperature';
+                                                            label = 'Temperature(°C)';
                                                             bgcolor = 'rgba(255, 99, 132, 1)';
                                                             ydata.push(columns[1])
+                                                            
                                                             break;
                                                         case 'turbidity-chart-2':
-                                                            label = 'Turbidity';
+                                                            label = 'Turbidity(NTU)';
                                                             bgcolor = 'rgba(255, 159, 64, 1)';
                                                             ydata.push(columns[2])
                                                             break;
@@ -412,12 +462,12 @@
                                                             ydata.push(columns[3])
                                                             break;
                                                         case 'dsolids-chart-2':
-                                                            label = 'Dissolved Solids';
+                                                            label = 'Dissolved Solids(mg/l)';
                                                             bgcolor = 'rgba(75, 192, 192, 1)';
                                                             ydata.push(columns[4])
                                                             break;
                                                         case 'doxygen-chart-2':
-                                                            label = 'Dissolved Oxygen';
+                                                            label = 'Dissolved Oxygen(mg/l)';
                                                             bgcolor = 'rgba(54, 162, 235,1)';
                                                             ydata.push(columns[5])
                                                             break;

@@ -86,6 +86,35 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Canadian Water Quality Index",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart1();
@@ -113,6 +142,35 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Temperature(°C)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart2();
@@ -138,6 +196,35 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             borderWidth: 1,
           },
         ],
+      },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Turbidity(NTU)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -165,6 +252,35 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "pH",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart4();
@@ -191,6 +307,35 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Dissolved Oxygen(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart5();
@@ -216,6 +361,35 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             borderWidth: 1,
           },
         ],
+      },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Total Dissloved Solids(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
