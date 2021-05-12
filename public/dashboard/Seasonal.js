@@ -199,7 +199,7 @@ async function ChartIt(
   async function DrawChart1() {
     const ctx = document.getElementById(id1).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -248,11 +248,6 @@ async function ChartIt(
         ],
       },
       options: {
-        elements: {
-          point: {
-            radius: 1,
-          },
-        },
         scales: {
           x: {
             title: {
@@ -283,7 +278,7 @@ async function ChartIt(
   async function DrawChart2() {
     const ctx = document.getElementById(id2).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -332,11 +327,6 @@ async function ChartIt(
         ],
       },
       options: {
-        elements: {
-          point: {
-            radius: 1,
-          },
-        },
         scales: {
           x: {
             title: {
@@ -366,7 +356,7 @@ async function ChartIt(
   async function DrawChart3() {
     const ctx = document.getElementById(id3).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -415,11 +405,6 @@ async function ChartIt(
         ],
       },
       options: {
-        elements: {
-          point: {
-            radius: 1,
-          },
-        },
         scales: {
           x: {
             title: {
@@ -449,7 +434,7 @@ async function ChartIt(
   async function DrawChart4() {
     const ctx = document.getElementById(id4).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -498,11 +483,6 @@ async function ChartIt(
         ],
       },
       options: {
-        elements: {
-          point: {
-            radius: 1,
-          },
-        },
         scales: {
           x: {
             title: {
@@ -532,7 +512,7 @@ async function ChartIt(
   async function DrawChart5() {
     const ctx = document.getElementById(id5).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -581,11 +561,6 @@ async function ChartIt(
         ],
       },
       options: {
-        elements: {
-          point: {
-            radius: 1,
-          },
-        },
         scales: {
           x: {
             title: {
@@ -615,7 +590,7 @@ async function ChartIt(
   async function DrawChart6() {
     const ctx = document.getElementById(id6).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -664,11 +639,6 @@ async function ChartIt(
         ],
       },
       options: {
-        elements: {
-          point: {
-            radius: 1,
-          },
-        },
         scales: {
           x: {
             title: {
