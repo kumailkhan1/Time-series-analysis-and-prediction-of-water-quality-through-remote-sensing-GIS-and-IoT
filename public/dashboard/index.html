@@ -26,7 +26,7 @@
     <meta name="author" content="Hassan Kumail Ali" />
 
     <link rel="icon" href="dashboard/png/logo.png" type="image/x-icon">
-   
+
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet">
@@ -136,7 +136,8 @@
                                             <li class="breadcrumb-item">
                                                 <a href="dashboard/index.html"><i class="feather icon-home"></i></a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="dashboard/index.html">Predictions using LSTM and VAR</a>
+                                            <li class="breadcrumb-item"><a href="dashboard/index.html">Predictions using
+                                                    LSTM and VAR</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -226,7 +227,24 @@
                                                             }
                                                         ]
                                                     },
+                                                    options: {
+                                                        scales: {
+                                                            y: {
 
+                                                                title: {
+                                                                    display: true,
+                                                                    text: data.label,
+                                                                }
+
+                                                            },
+                                                            x: {
+                                                                title: {
+                                                                    display: true,
+                                                                    text: "Date"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
 
                                                 });
                                             }
@@ -249,12 +267,12 @@
                                                     // returning other data based on flag
                                                     switch (flag) {
                                                         case 'temperature-chart':
-                                                            label = 'Temperature';
+                                                            label = 'Temperature (°C)';
                                                             bgcolor = 'rgba(255, 99, 132, 1)';
                                                             ydata.push(columns[1])
                                                             break;
                                                         case 'turbidity-chart':
-                                                            label = 'Turbidity';
+                                                            label = 'Turbidity (mg/l)';
                                                             bgcolor = 'rgba(255, 159, 64, 1)';
                                                             ydata.push(columns[2])
                                                             break;
@@ -264,12 +282,12 @@
                                                             ydata.push(columns[3])
                                                             break;
                                                         case 'dsolids-chart':
-                                                            label = 'Dissolved Solids';
+                                                            label = 'Dissolved Solids (mg/l)';
                                                             bgcolor = 'rgba(75, 192, 192, 1)';
                                                             ydata.push(columns[4])
                                                             break;
                                                         case 'doxygen-chart':
-                                                            label = 'Dissolved Oxygen';
+                                                            label = 'Dissolved Oxygen (mg/l)';
                                                             bgcolor = 'rgba(54, 162, 235,1)';
                                                             ydata.push(columns[5])
                                                             break;
@@ -374,7 +392,24 @@
                                                             }
                                                         ]
                                                     },
-        
+                                                    options: {
+                                                        scales: {
+                                                            y: {
+
+                                                                title: {
+                                                                    display: true,
+                                                                    text: data.label,
+                                                                }
+
+                                                            },
+                                                            x: {
+                                                                title: {
+                                                                    display: true,
+                                                                    text: "Date"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
 
                                                 });
                                             }
@@ -397,12 +432,12 @@
                                                     // returning other data based on flag
                                                     switch (flag) {
                                                         case 'temperature-chart-2':
-                                                            label = 'Temperature';
+                                                            label = 'Temperature (°C)';
                                                             bgcolor = 'rgba(255, 99, 132, 1)';
                                                             ydata.push(columns[1])
                                                             break;
                                                         case 'turbidity-chart-2':
-                                                            label = 'Turbidity';
+                                                            label = 'Turbidity (mg/l)';
                                                             bgcolor = 'rgba(255, 159, 64, 1)';
                                                             ydata.push(columns[2])
                                                             break;
@@ -412,12 +447,12 @@
                                                             ydata.push(columns[3])
                                                             break;
                                                         case 'dsolids-chart-2':
-                                                            label = 'Dissolved Solids';
+                                                            label = 'Dissolved Solids (mg/l)';
                                                             bgcolor = 'rgba(75, 192, 192, 1)';
                                                             ydata.push(columns[4])
                                                             break;
                                                         case 'doxygen-chart-2':
-                                                            label = 'Dissolved Oxygen';
+                                                            label = 'Dissolved Oxygen (mg/l)';
                                                             bgcolor = 'rgba(54, 162, 235,1)';
                                                             ydata.push(columns[5])
                                                             break;

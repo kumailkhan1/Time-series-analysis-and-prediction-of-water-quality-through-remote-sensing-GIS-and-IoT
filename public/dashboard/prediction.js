@@ -72,7 +72,7 @@ function validateInput(temperature, turbidity, ph, dsolids, doxygen) {
         validation = false;
     }
     if (!(turbidity >= 0 && turbidity <= 1400)) {
-        turbidityMsg.innerText = "Turbidity value should be in range 0 to 1400 mg/l"
+        turbidityMsg.innerText = "Turbidity value should be in range 0 to 1400 NTU"
         turbidityMsg.style.display = "block";
 
         validation = false;
