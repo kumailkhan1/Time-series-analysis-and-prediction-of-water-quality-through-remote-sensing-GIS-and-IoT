@@ -318,6 +318,30 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Canadian Water Quality Index",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart1();
@@ -387,17 +411,30 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      //   options: {
-      //     scales: {
-      //       y: {
-      //         max: 30,
-      //         min: 0,
-      //         ticks: {
-      //           stepSize: 5,
-      //         },
-      //       },
-      //     },
-      //   },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Temperature(°C)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart2();
@@ -466,17 +503,30 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      //   options: {
-      //     scales: {
-      //       y: {
-      //         max: 300,
-      //         min: 0,
-      //         ticks: {
-      //           stepSize: 50,
-      //         },
-      //       },
-      //     },
-      //   },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Turbidity(NTU)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart3();
@@ -545,17 +595,30 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      //   options: {
-      //     scales: {
-      //       y: {
-      //         max: 14,
-      //         min: 0,
-      //         ticks: {
-      //           stepSize: 2,
-      //         },
-      //       },
-      //     },
-      //   },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "pH",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart4();
@@ -624,17 +687,30 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
           },
         ],
       },
-      //   options: {
-      //     scales: {
-      //       y: {
-      //         max: 10,
-      //         min: 0,
-      //         ticks: {
-      //           stepSize: 2,
-      //         },
-      //       },
-      //     },
-      //   },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Dissolved Oxygen(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart5();
@@ -702,6 +778,30 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             borderWidth: 1,
           },
         ],
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Total Dissolved Solids(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }

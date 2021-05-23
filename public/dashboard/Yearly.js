@@ -254,58 +254,87 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             data: WQILabel1,
             borderColor: "black",
             backgroundColor: "black",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2014",
             data: WQILabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2015",
             data: WQILabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: WQILabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: WQILabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: WQILabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: WQILabel7,
             borderColor: "yellow",
             backgroundColor: "yellow",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: WQILabel8,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Canadian Water Quality Index",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -323,70 +352,88 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             data: tempLabel1,
             borderColor: "black",
             backgroundColor: "black",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2014",
             data: tempLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2015",
             data: tempLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: tempLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: tempLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: tempLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: tempLabel7,
             borderColor: "yellow",
             backgroundColor: "yellow",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: tempLabel8,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
       },
-      // options: {
-      //   scales: {
-      //     y: {
-      //       max: 175,
-      //       // min: 0,
-      //       ticks: {
-      //         stepSize: 2,
-      //       },
-      //     },
-      //   },
-      // },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Temperature(°C)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart2();
@@ -402,58 +449,87 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             data: turbLabel1,
             borderColor: "black",
             backgroundColor: "black",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2014",
             data: turbLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2015",
             data: turbLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: turbLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: turbLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: turbLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: turbLabel7,
             borderColor: "yellow",
             backgroundColor: "yellow",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: turbLabel8,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Turbidity(NTU)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -470,70 +546,88 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             data: pHLabel1,
             borderColor: "black",
             backgroundColor: "black",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2014",
             data: pHLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2015",
             data: pHLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: pHLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: pHLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: pHLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: pHLabel7,
             borderColor: "yellow",
             backgroundColor: "yellow",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: pHLabel8,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
       },
-      // options: {
-      //   scales: {
-      //     y: {
-      //       max: 255,
-      //       // min: 0,
-      //       ticks: {
-      //         stepSize: 2,
-      //       },
-      //     },
-      //   },
-      // },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "pH",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
+      },
     });
   }
   DrawChart4();
@@ -549,58 +643,87 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             data: DOLabel1,
             borderColor: "black",
             backgroundColor: "black",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2014",
             data: DOLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2015",
             data: DOLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: DOLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: DOLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: DOLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: DOLabel7,
             borderColor: "yellow",
             backgroundColor: "yellow",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: DOLabel8,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Dissolved Oxygen(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -617,58 +740,87 @@ async function ChartIt(id1, id2, id3, id4, id5, id6) {
             data: TDSLabel1,
             borderColor: "black",
             backgroundColor: "black",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2014",
             data: TDSLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2015",
             data: TDSLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: TDSLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: TDSLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: TDSLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: TDSLabel7,
             borderColor: "yellow",
             backgroundColor: "yellow",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: TDSLabel8,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Total Dissolved Solids(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }

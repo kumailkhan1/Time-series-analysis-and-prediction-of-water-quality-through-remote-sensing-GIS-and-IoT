@@ -199,7 +199,7 @@ async function ChartIt(
   async function DrawChart1() {
     const ctx = document.getElementById(id1).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -208,44 +208,68 @@ async function ChartIt(
             data: WQILabel1,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: WQILabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: WQILabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: WQILabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: WQILabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: WQILabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Canadian Water Quality Index",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -254,7 +278,7 @@ async function ChartIt(
   async function DrawChart2() {
     const ctx = document.getElementById(id2).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -263,44 +287,68 @@ async function ChartIt(
             data: tempLabel1,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: tempLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: tempLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: tempLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: tempLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: tempLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Temperature(°C)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -308,7 +356,7 @@ async function ChartIt(
   async function DrawChart3() {
     const ctx = document.getElementById(id3).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -317,44 +365,68 @@ async function ChartIt(
             data: turbLabel1,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: turbLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: turbLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: turbLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: turbLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: turbLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Turbidity(NTU)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -362,7 +434,7 @@ async function ChartIt(
   async function DrawChart4() {
     const ctx = document.getElementById(id4).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -371,44 +443,68 @@ async function ChartIt(
             data: pHLabel1,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: pHLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: pHLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: pHLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: pHLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: pHLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "pH",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -416,7 +512,7 @@ async function ChartIt(
   async function DrawChart5() {
     const ctx = document.getElementById(id5).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -425,44 +521,68 @@ async function ChartIt(
             data: DOLabel1,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: DOLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: DOLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: DOLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: DOLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: DOLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Dissolved Oxygen(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
@@ -470,7 +590,7 @@ async function ChartIt(
   async function DrawChart6() {
     const ctx = document.getElementById(id6).getContext("2d");
     const myChart1 = new Chart(ctx, {
-      type: "line",
+      type: "bar",
       data: {
         labels: xlabel,
         datasets: [
@@ -479,44 +599,68 @@ async function ChartIt(
             data: TDSLabel1,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2016",
             data: TDSLabel2,
             borderColor: "blue",
             backgroundColor: "blue",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2017",
             data: TDSLabel3,
             borderColor: "orange",
             backgroundColor: "orange",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2018",
             data: TDSLabel4,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2019",
             data: TDSLabel5,
             borderColor: "green",
             backgroundColor: "green",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
           {
             label: "2020",
             data: TDSLabel6,
             borderColor: "red",
             backgroundColor: "red",
-            borderWidth: 1,
+            borderWidth: 1.0,
           },
         ],
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Months",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Total Dissloved Solids(mg/l)",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }

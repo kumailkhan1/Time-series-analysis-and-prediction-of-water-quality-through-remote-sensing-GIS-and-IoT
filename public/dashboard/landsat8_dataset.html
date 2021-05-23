@@ -268,7 +268,7 @@
         }
 
         d3.csv('dashboard/Lansat8_Non-Interpolated.csv', function (data) {
-            var columns = ['Date','Temperature (°C)','Turbidity (mg/l)','pH','Dissolved Oxygen (mg/l)','Total Suspended Solids (mg/l)'];
+            var columns = ['Date','Temperature (°C)','Turbidity (NTU)','pH','Dissolved Oxygen (mg/l)','Total Suspended Solids (mg/l)'];
             tabulate(data, columns);
         });
     </script>

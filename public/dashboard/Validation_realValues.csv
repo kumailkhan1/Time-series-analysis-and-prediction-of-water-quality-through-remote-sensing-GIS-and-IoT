@@ -1,4 +1,4 @@
-Date,Temperature,Turbidity,pH,Dissolved Solids,Dissolved Oxygen
+Date,Temperature(°C),Turbidty(NTU),pH,Dissolved Solids(mg/l),Dissolved Oxygen(mg/l)
 2020/06/02,25,19,7.45,225,5.9
 2020/06/03,24,33,7.29,230,5.8
 2020/06/04,25,40,7.29,260,5.7

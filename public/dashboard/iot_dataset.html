@@ -267,7 +267,7 @@
         }
 
         d3.csv('dashboard/IoT Dataset.csv', function (data) {
-            var columns = ['Date','Temperature','Turbidity','pH','Dissolved Oxygen'];
+            var columns = ['Date','Temperature (°C)','Turbidity (NTU)','pH','Dissolved Oxygen (mg/l)'];
             tabulate(data, columns);
         });
     </script>

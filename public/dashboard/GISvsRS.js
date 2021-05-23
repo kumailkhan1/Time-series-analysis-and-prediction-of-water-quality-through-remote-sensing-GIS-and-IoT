@@ -74,16 +74,45 @@ async function ChartIt(filepath1, filepath2, id) {
             data: WQILabel1,
             borderColor: "purple",
             backgroundColor: "purple",
-            borderWidth: 1,
+            borderWidth: 1.5,
           },
           {
             label: "RS",
             data: WQILabel2,
             borderColor: "#e75480",
             backgroundColor: "#e75480",
-            borderWidth: 1,
+            borderWidth: 1.5,
           },
         ],
+      },
+      options: {
+        elements: {
+          point: {
+            radius: 1,
+          },
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: "Date",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+          y: {
+            title: {
+              display: true,
+              text: "Canadian Water Quality Index",
+              font: {
+                size: 14,
+                weight: "bold",
+              },
+            },
+          },
+        },
       },
     });
   }
