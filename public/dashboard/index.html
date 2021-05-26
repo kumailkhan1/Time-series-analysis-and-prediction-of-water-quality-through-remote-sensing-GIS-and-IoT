@@ -180,6 +180,7 @@
 
                                         </div>
                                         <script>
+                                            Chart.defaults.font.family = 'quicksand,sans-serif'
 
                                             drawChart('temperature-chart');
                                             drawChart('turbidity-chart');
@@ -210,7 +211,7 @@
                                                         labels: data.xlabels,
                                                         datasets: [
                                                             {
-                                                                label: "Actual "+data.label,
+                                                                label: "Actual " + data.label,
                                                                 data: firstDataset,
                                                                 fill: false,
                                                                 borderColor: 'green',
@@ -219,7 +220,7 @@
 
                                                             {
 
-                                                                label: "Predicted Values of "+data.label,
+                                                                label: "Predicted Values of " + data.label,
                                                                 data: secondDataset,
                                                                 fill: false,
                                                                 borderColor: 'rgb(255,0,0)',
@@ -375,7 +376,7 @@
                                                         labels: data.xlabels,
                                                         datasets: [
                                                             {
-                                                                label: "Actual "+data.label,
+                                                                label: "Actual " + data.label,
                                                                 data: firstDataset,
                                                                 fill: false,
                                                                 borderColor: 'green',
@@ -384,7 +385,7 @@
 
                                                             {
 
-                                                                label: "Predicted Values of "+data.label,
+                                                                label: "Predicted Values of " + data.label,
                                                                 data: secondDataset,
                                                                 fill: false,
                                                                 borderColor: 'rgb(255,0,0)',
@@ -393,30 +394,30 @@
                                                         ]
                                                     },
                                                     options: {
-                                                            scales: {
+                                                        scales: {
                                                             x: {
                                                                 title: {
-                                                                display: true,
-                                                                text: "Date",
-                                                                font: {
-                                                                    size: 12,
-                                                                    weight: "bold",
-                                                                },
+                                                                    display: true,
+                                                                    text: "Date",
+                                                                    font: {
+                                                                        size: 12,
+                                                                        weight: "bold",
+                                                                    },
                                                                 },
                                                             },
                                                             y: {
                                                                 title: {
-                                                                display: true,
-                                                                text: data.label,
-                                                                font: {
-                                                                    size: 12,
-                                                                    weight: "bold",
+                                                                    display: true,
+                                                                    text: data.label,
+                                                                    font: {
+                                                                        size: 12,
+                                                                        weight: "bold",
+                                                                    },
                                                                 },
-                                                                },
-                                                            },
                                                             },
                                                         },
-                                                    
+                                                    },
+
 
                                                 });
                                             }
@@ -442,7 +443,7 @@
                                                             label = 'Temperature (°C)';
                                                             bgcolor = 'rgba(255, 99, 132, 1)';
                                                             ydata.push(columns[1])
-                                                            
+
                                                             break;
                                                         case 'turbidity-chart-2':
                                                             label = 'Turbidity(NTU)';

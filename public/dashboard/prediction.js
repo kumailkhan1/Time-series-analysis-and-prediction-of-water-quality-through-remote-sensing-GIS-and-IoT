@@ -56,41 +56,41 @@ document.getElementById("predictBtn").addEventListener("click", async () => {
 
 function validateInput(temperature, turbidity, ph, dsolids, doxygen) {
 
-    let validation = true;
-    if (isNaN(temperature) || isNaN(turbidity) || isNaN(ph) || isNaN(dsolids) || isNaN(doxygen)) {
-        document.getElementById('model-output').textContent = "Value of WQPs can't be empty.";
-        validation = false;
-    }
+  let validation = true;
+  if (isNaN(temperature) || isNaN(turbidity) || isNaN(ph) || isNaN(dsolids) || isNaN(doxygen)) {
+    document.getElementById('model-output').textContent = "Value of WQPs can't be empty.";
+    validation = false;
+  }
 
 
-    if (!(temperature >= 0 && temperature <= 50)) {
-        tempMsg.innerText = "Temperature value should be in range 0 to 50 °C"
-        tempMsg.style.display = "block";
+  if (!(temperature >= 0 && temperature <= 50)) {
+    tempMsg.innerText = "Temperature value should be in range 0 to 50 °C"
+    tempMsg.style.display = "block";
 
-        validation = false;
-    }
-    if (!(turbidity >= 0 && turbidity <= 1400)) {
-        turbidityMsg.innerText = "Turbidity value should be in range 0 to 1400 NTU"
-        turbidityMsg.style.display = "block";
+    validation = false;
+  }
+  if (!(turbidity >= 0 && turbidity <= 1400)) {
+    turbidityMsg.innerText = "Turbidity value should be in range 0 to 1400 NTU"
+    turbidityMsg.style.display = "block";
 
-        validation = false;
-    }
-    if (!(ph >= 0 && ph <= 14)) {
-        phMsg.innerText = "pH value should be in range 0 to 14"
-        phMsg.style.display = "block";
+    validation = false;
+  }
+  if (!(ph >= 1 && ph <= 14)) {
+    phMsg.innerText = "pH value should be in range 0 to 14"
+    phMsg.style.display = "block";
 
-        validation = false;
-    }
-    if (!(dsolids >= 0 && dsolids <= 500)) {
-        dsolidsMsg.innerText = "Dissolved Solids value should be in range 0 to 500 mg/l"
-        validation = false;
-        dsolidsMsg.style.display = "block";
-    }
-    if (!(doxygen >= 0 && doxygen <= 200)) {
-        doxygenMsg.innerText = "Dissolved Oxygen value should be in range 0 to 200 mg/l"
-        validation = false;
-        doxygenMsg.style.display = "block";
-        
-    }
-    return validation;
+    validation = false;
+  }
+  if (!(dsolids >= 0 && dsolids <= 500)) {
+    dsolidsMsg.innerText = "Dissolved Solids value should be in range 0 to 500 mg/l"
+    validation = false;
+    dsolidsMsg.style.display = "block";
+  }
+  if (!(doxygen >= 0 && doxygen <= 200)) {
+    doxygenMsg.innerText = "Dissolved Oxygen value should be in range 0 to 200 mg/l"
+    validation = false;
+    doxygenMsg.style.display = "block";
+
+  }
+  return validation;
 }
