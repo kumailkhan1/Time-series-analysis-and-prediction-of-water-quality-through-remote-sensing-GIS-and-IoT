@@ -62,6 +62,11 @@ function validateInput(temperature, turbidity, ph, dsolids, doxygen) {
     validation = false;
   }
 
+  if (temperature == 0 && turbidity == 0 && ph == 0 && dsolids == 0 && doxygen == 0) {
+    document.getElementById('model-output').textContent = "Value of all WQPs can't be zero. ";
+    validation = false;
+  }
+
 
   if (!(temperature >= 0 && temperature <= 50)) {
     tempMsg.innerText = "Temperature value should be in range 0 to 50 °C"
@@ -75,7 +80,7 @@ function validateInput(temperature, turbidity, ph, dsolids, doxygen) {
 
     validation = false;
   }
-  if (!(ph >= 1 && ph <= 14)) {
+  if (!(ph >= 0 && ph <= 14)) {
     phMsg.innerText = "pH value should be in range 0 to 14"
     phMsg.style.display = "block";
 
