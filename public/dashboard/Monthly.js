@@ -1,3 +1,6 @@
+Chart.defaults.font.family = 'quicksand,sans-serif'
+
+
 const xlabel = [
   "January",
   "February",

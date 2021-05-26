@@ -1,3 +1,7 @@
+
+
+Chart.defaults.font.family = 'quicksand,sans-serif'
+
 async function ChartIt(filepath1, filepath2, id) {
   const xlabel = [];
   const tempLabel1 = [];

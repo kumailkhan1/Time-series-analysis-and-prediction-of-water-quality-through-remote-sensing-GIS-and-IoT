@@ -1,3 +1,6 @@
+Chart.defaults.font.family = 'quicksand,sans-serif'
+
+
 async function ChartIt(
   filepath1,
   filepath2,
