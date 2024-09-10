@@ -1,5 +1,5 @@
 
-# FYP-Web-Portal
+# Time-series analysis and prediction of water quality through remote sensing, GIS and IoT
 
 START: 
 1. npm install
